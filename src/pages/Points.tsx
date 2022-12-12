@@ -34,11 +34,13 @@ const Points = () => {
   const handleRedoButton = () => {
     const emptyArray: TPoint[] = [];
     const resetedPoints = [...reseted];
+
     if (resetedPoints.length && !points.length) {
       const newPoints = [...resetedPoints];
       setPoints(newPoints);
       setReseted(emptyArray);
     }
+
     if (resetedPoints.length && points.length) {
       const newPoints = [...points];
       const poppedPoint = popped.pop();
@@ -47,11 +49,14 @@ const Points = () => {
       setPoints(newPoints);
       setReseted(emptyArray);
     }
-    const newPoints = [...points];
-    const poppedPoint = popped.pop();
-    if (!poppedPoint) return;
-    newPoints.push(poppedPoint);
-    setPoints(newPoints);
+
+    if (popped.length && !reseted.length) {
+      const newPoints = [...points];
+      const poppedPoint = popped.pop();
+      if (!poppedPoint) return;
+      newPoints.push(poppedPoint);
+      setPoints(newPoints);
+    }
   };
 
   const handleUndoButton = () => {
