@@ -1,0 +1,29 @@
+#root {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  height: 100vh;
+}
+
+.point {
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #333;
+  height: 10px;
+  width: 10px;
+}
+
+.Tree {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.button {
+  background-color: white;
+  border: none;
+  font-size: 40px;
+}
